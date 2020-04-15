@@ -23,7 +23,11 @@ class App extends React.Component {
         <Router>
           <ArticleList path="/" />
           <ArticleList path="topics/:topic" />
-          <SingleArticle path="articles/:article_id" />
+          <ArticleList path=":author/articles" />
+          <SingleArticle
+            path="articles/:article_id"
+            loggedInUser={loggedInUser}
+          />
         </Router>
 
         <Footer />

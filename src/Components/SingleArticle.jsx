@@ -2,7 +2,8 @@ import React from 'react';
 import * as api from '../Utils/api';
 import Loading from './Loading';
 import { formatDates } from '../Utils/utils';
-//comments
+import { Link } from '@reach/router';
+import CommentList from './CommentList';
 //votes
 
 class SingleArticle extends React.Component {
@@ -16,13 +17,40 @@ class SingleArticle extends React.Component {
   }
 
   render() {
-    return <main>article here</main>;
+    const {
+      isLoading,
+      article: {
+        title,
+        author,
+        created_at,
+        body,
+        topic,
+        article_id,
+        votes,
+        comment_count
+      }
+    } = this.state;
+    if (isLoading) return <Loading />;
+    return (
+      <main>
+        <article>
+          <h3>{title}</h3>
+          <p>
+            <Link to={`/topics/${topic}`}>{topic}</Link>
+            posted by <Link to={`/${author}/articles`}>{author}</Link>{' '}
+            {created_at}
+          </p>
+          <p>{body}</p>
+        </article>
+        <CommentList article_id={article_id} comment_count={comment_count} />
+      </main>
+    );
   }
 
   getArticleById = () => {
     api.fetchArticleById(this.props.article_id).then((article) => {
-      const formattedArticles = formatDates([article]);
-      this.setState({ article: formattedArticles[0], isLoading: false });
+      const formattedArticle = formatDates(article);
+      this.setState({ article: formattedArticle, isLoading: false });
     });
   };
 }

@@ -19,7 +19,7 @@ const ArticleCard = ({
       <p>{body}</p>
       <p>
         <Link to={`/topics/${topic}`}>{topic}</Link>
-        posted by <Link to={`/${author}`}>{author}</Link> {created_at}
+        posted by <Link to={`/${author}/articles`}>{author}</Link> {created_at}
       </p>
     </article>
   );

@@ -22,6 +22,14 @@
 .Nav {
   grid-area: nav;
   border: solid 2px hotpink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.nav-link {
+  align-content: center;
 }
 
 .Main {

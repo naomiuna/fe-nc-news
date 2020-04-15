@@ -2,6 +2,7 @@ import React from 'react';
 import Loading from './Loading';
 import { Link } from '@reach/router';
 import * as api from '../Utils/api';
+import Emoji from './Emoji';
 
 class NavBar extends React.Component {
   state = {
@@ -18,11 +19,20 @@ class NavBar extends React.Component {
     if (isLoading) return <Loading />;
     return (
       <nav className="Nav">
-        <Link to="/">Home</Link>
-        {topics.map(({ slug }) => {
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
+        {topics.map(({ slug, description }) => {
           return (
-            <Link to={`/topics/${slug}`} key={slug}>
+            <Link to={`/topics/${slug}`} className="nav-link" key={slug}>
               {slug}
+              {slug === 'coding' && (
+                <Emoji symbol="🧑🏻‍💻" label="person on laptop" />
+              )}
+              {slug === 'football' && <Emoji symbol="⚽️" label="football" />}
+              {slug === 'cooking' && <Emoji symbol="🧑🏾‍🍳" label="chef" />}
+              <br />
+              {description}
             </Link>
           );
         })}
