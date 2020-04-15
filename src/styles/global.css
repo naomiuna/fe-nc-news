@@ -1,0 +1,29 @@
+.App {
+  display: grid;
+  grid-template-rows: 50px 50px auto 50px;
+  grid-template-columns: auto 200px;
+  grid-template-areas: 'header logIn' 'nav nav' 'main main' 'footer footer';
+}
+
+.logIn {
+  grid-area: logIn;
+  border: solid 2px rgb(80, 255, 203);
+}
+.Header {
+  grid-area: header;
+  border: solid 2px coral;
+}
+
+.Footer {
+  grid-area: footer;
+  border: solid 2px cornflowerblue;
+}
+
+.Nav {
+  grid-area: nav;
+  border: solid 2px hotpink;
+}
+
+.Main {
+  grid-area: main;
+}
