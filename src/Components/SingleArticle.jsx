@@ -4,7 +4,7 @@ import Loading from './Loading';
 import { formatDates } from '../Utils/utils';
 import { Link } from '@reach/router';
 import CommentList from './CommentList';
-//votes
+import Votes from './Votes';
 
 class SingleArticle extends React.Component {
   state = {
@@ -41,6 +41,7 @@ class SingleArticle extends React.Component {
             {created_at}
           </p>
           <p>{body}</p>
+          <Votes votes={votes} id={article_id} type={'articles'} />
         </article>
         <CommentList article_id={article_id} comment_count={comment_count} />
       </main>

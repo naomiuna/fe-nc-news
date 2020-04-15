@@ -27,3 +27,7 @@ export const fetchComments = (article_id) => {
     return data.comments;
   });
 };
+
+export const patchVotes = (inc_votes, id, type) => {
+  return request.patch(`/${type}/${id}`, { inc_votes });
+};
