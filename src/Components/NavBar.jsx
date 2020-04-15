@@ -24,15 +24,24 @@ class NavBar extends React.Component {
         </Link>
         {topics.map(({ slug, description }) => {
           return (
-            <Link to={`/topics/${slug}`} className="nav-link" key={slug}>
+            <Link
+              to={`/topics/${slug}`}
+              className="nav-link"
+              key={slug}
+              state={{ description }}
+            >
               {slug}
               {slug === 'coding' && (
-                <Emoji symbol="🧑🏻‍💻" label="person on laptop" />
+                <Emoji
+                  symbol="🧑🏻‍💻"
+                  label="person on laptop"
+                  desciption={description}
+                />
               )}
               {slug === 'football' && <Emoji symbol="⚽️" label="football" />}
               {slug === 'cooking' && <Emoji symbol="🧑🏾‍🍳" label="chef" />}
               <br />
-              {description}
+              {/* {description} */}
             </Link>
           );
         })}

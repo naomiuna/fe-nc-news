@@ -28,11 +28,15 @@ class ArticleList extends React.Component {
 
   render() {
     const { isLoading, articles } = this.state;
+    const { description } = this.props.location.state;
     if (isLoading) return <Loading />;
     return (
       <main className="Main">
         {this.props.topic ? (
-          <h2>{this.props.topic}</h2>
+          <>
+            <h2>{this.props.topic}</h2>
+            <h3>{description}</h3>
+          </>
         ) : this.props.author ? (
           <h2>{this.props.author}'s articles</h2>
         ) : (
