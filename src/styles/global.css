@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-rows: 50px 50px auto 50px;
+  grid-template-rows: 100px 50px auto 50px;
   grid-template-columns: auto 200px;
   grid-template-areas: 'header logIn' 'nav nav' 'main main' 'footer footer';
 }
@@ -34,4 +34,8 @@
 
 .Main {
   grid-area: main;
+}
+
+.avatar {
+  height: 50px;
 }

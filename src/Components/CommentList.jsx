@@ -15,11 +15,11 @@ class CommentList extends React.Component {
   }
   render() {
     const { comments, isLoading } = this.state;
-    const { comment_count, loggedInUser } = this.props;
+    const { loggedInUser } = this.props;
     if (isLoading) return <Loading />;
     return (
       <section>
-        <h3>Comments ({comment_count})</h3>
+        <h3>Comments ({comments.length})</h3>
         {!loggedInUser ? (
           <section>
             <p>You must be logged in to comment</p>
@@ -32,7 +32,14 @@ class CommentList extends React.Component {
         )}
         {comments.map((comment) => {
           const { comment_id } = comment;
-          return <CommentCard key={comment_id} {...comment} />;
+          return (
+            <CommentCard
+              key={comment_id}
+              {...comment}
+              handleDelete={this.handleDelete}
+              loggedInUser={loggedInUser}
+            />
+          );
         })}
       </section>
     );
@@ -52,6 +59,13 @@ class CommentList extends React.Component {
         return { comments: [formattedComment, ...currentState.comments] };
       });
     });
+  };
+
+  handleDelete = (id) => {
+    api.deleteComment(id).then(() => {
+      this.getComments();
+    });
+    //getComments again here or update state to trigger componentDidUpdate?
   };
 }
 
