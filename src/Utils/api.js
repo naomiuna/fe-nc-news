@@ -31,3 +31,11 @@ export const fetchComments = (article_id) => {
 export const patchVotes = (inc_votes, id, type) => {
   return request.patch(`/${type}/${id}`, { inc_votes });
 };
+
+export const postComment = (newComment, id) => {
+  return request
+    .post(`/articles/${id}/comments`, newComment)
+    .then(({ data }) => {
+      return data.comment;
+    });
+};

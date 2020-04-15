@@ -31,6 +31,7 @@ class SingleArticle extends React.Component {
       }
     } = this.state;
     if (isLoading) return <Loading />;
+    const { loggedInUser } = this.props;
     return (
       <main>
         <article>
@@ -43,7 +44,11 @@ class SingleArticle extends React.Component {
           <p>{body}</p>
           <Votes votes={votes} id={article_id} type={'articles'} />
         </article>
-        <CommentList article_id={article_id} comment_count={comment_count} />
+        <CommentList
+          article_id={article_id}
+          comment_count={comment_count}
+          loggedInUser={loggedInUser}
+        />
       </main>
     );
   }
