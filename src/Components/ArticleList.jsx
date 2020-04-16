@@ -4,12 +4,14 @@ import Loading from './Loading';
 import ArticleCard from './ArticleCard';
 import { formatDates } from '../Utils/utils';
 import SortArticles from './SortArticles';
+import Error from './Error';
 
 class ArticleList extends React.Component {
   state = {
     articles: [],
     isLoading: true,
-    sort_by: ''
+    sort_by: '',
+    err: null
   };
 
   componentDidMount() {
@@ -27,15 +29,15 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    const { isLoading, articles } = this.state;
-    const { description } = this.props.location.state;
+    const { isLoading, articles, err } = this.state;
+    if (err) return <Error {...err} />;
     if (isLoading) return <Loading />;
     return (
       <main className="Main">
         {this.props.topic ? (
           <>
             <h2>{this.props.topic}</h2>
-            <h3>{description}</h3>
+            <h3>{this.props.location.state.description}</h3>
           </>
         ) : this.props.author ? (
           <h2>{this.props.author}'s articles</h2>
@@ -60,6 +62,10 @@ class ArticleList extends React.Component {
           articles: formattedArticles,
           isLoading: false
         });
+      })
+      .catch((err) => {
+        const { status, data } = err.response;
+        this.setState({ err: { status, msg: data.msg }, isLoading: false });
       });
   };
 

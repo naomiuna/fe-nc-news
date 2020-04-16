@@ -20,11 +20,15 @@ class LogIn extends React.Component {
             <p>Sign in</p>
             <label>
               Username :{' '}
-              <input
-                onChange={this.handleChange}
-                value={username}
-                type="text"
-              ></input>
+              <select onChange={this.handleChange} value={username} type="text">
+                <option value="">select a user</option>
+                <option value="weegembump">weegembump</option>
+                <option value="happyamy2016">happyamy2016</option>
+                <option value="jessjelly">jessjelly</option>
+                <option value="grumpy19">grumpy19</option>
+                <option value="tickle122">tickle122</option>
+                <option value="cooljmessy">cooljmessy</option>
+              </select>
             </label>
             <button>sign in</button>
           </form>

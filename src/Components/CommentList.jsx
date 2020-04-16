@@ -4,18 +4,21 @@ import Loading from './Loading';
 import { formatDates } from '../Utils/utils';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
+import Error from './Error';
 
 class CommentList extends React.Component {
   state = {
     comments: [],
-    isLoading: true
+    isLoading: true,
+    err: null
   };
   componentDidMount() {
     this.getComments();
   }
   render() {
-    const { comments, isLoading } = this.state;
+    const { comments, isLoading, err } = this.state;
     const { loggedInUser } = this.props;
+    if (err) return <Error {...err} />;
     if (isLoading) return <Loading />;
     return (
       <section>
@@ -46,10 +49,16 @@ class CommentList extends React.Component {
   }
 
   getComments = () => {
-    api.fetchComments(this.props.article_id).then((comments) => {
-      const formattedComments = formatDates(comments);
-      this.setState({ comments: formattedComments, isLoading: false });
-    });
+    api
+      .fetchComments(this.props.article_id)
+      .then((comments) => {
+        const formattedComments = formatDates(comments);
+        this.setState({ comments: formattedComments, isLoading: false });
+      })
+      .catch((err) => {
+        const { status, data } = err.response;
+        this.setState({ err: { status, msg: data.msg }, isLoading: false });
+      });
   };
 
   handleNewComment = (newComment) => {
@@ -65,7 +74,6 @@ class CommentList extends React.Component {
     api.deleteComment(id).then(() => {
       this.getComments();
     });
-    //getComments again here or update state to trigger componentDidUpdate?
   };
 }
 

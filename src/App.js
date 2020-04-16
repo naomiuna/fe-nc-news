@@ -6,6 +6,7 @@ import ArticleList from './Components/ArticleList';
 import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
 import SingleArticle from './Components/SingleArticle';
+import Error from './Components/Error';
 import { Router } from '@reach/router';
 import * as api from './Utils/api';
 
@@ -35,6 +36,7 @@ class App extends React.Component {
             path="articles/:article_id"
             loggedInUser={loggedInUser}
           />
+          <Error default />
         </Router>
         <Footer />
       </div>
