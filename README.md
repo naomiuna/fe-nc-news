@@ -2,10 +2,12 @@
 
 A Reddit-style React news app.
 
-View articles by topic or author and sort by newest, top rated and hottest.
-View inndividual articles with more detail and comments. When logged in, user can post a comment of delete their own comments.
+View articles by topic or author.<br />
+Sort by newest, top rated and hottest.<br />
+View individual articles with more detail and comments. <br />
+When logged in, user can post a comment of delete their own comments.
 
-Hosted project here on Netlify
+Hosted project here on Netlify<br/>
 Hosted API available [here](https://nt-nc-news.herokuapp.com/api) and backend repo [here](https://github.com/naomiuna/nc-news).
 
 ## Getting Started & Installation
@@ -18,7 +20,7 @@ The minimum version of [Node.js](https://nodejs.org/en/download) you will need t
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Clone a copy of the repository on your machine using the below command:
+Clone a copy of the repository on your machine:
 
 ```javascript
 git clone https://github.com/naomiuna/fe-nc-news
@@ -44,7 +46,7 @@ The page will reload if you make edits.<br />
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [axios](https://github.com/axios/axios) - Promise based HTTP client
-- [Reach Router](https://reach.tech/router) - Router for React
+- [Reach Router](https://reach.tech/router) - Router for React<br />
   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Acknowledgments
