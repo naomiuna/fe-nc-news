@@ -1,4 +1,4 @@
-# nc-news - backend API project :newspaper:
+# nc-news - frontend project :newspaper:
 
 A Reddit-style React news app.
 
