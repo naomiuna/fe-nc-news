@@ -28,7 +28,7 @@ class App extends React.Component {
           handleSignOut={this.handleSignOut}
         />
         <NavBar />
-        <Router>
+        <Router className="Main">
           <ArticleList path="/" />
           <ArticleList path="topics/:topic" />
           <ArticleList path=":author/articles" />

@@ -46,7 +46,7 @@ The page will reload if you make edits.<br />
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [axios](https://github.com/axios/axios) - Promise based HTTP client
-- [Reach Router](https://reach.tech/router) - Router for React<br />
+- [Reach Router](https://reach.tech/router) - Router for React<br /><br />
   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Acknowledgments

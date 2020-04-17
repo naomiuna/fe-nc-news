@@ -5,6 +5,7 @@ import ArticleCard from './ArticleCard';
 import { formatDates } from '../Utils/utils';
 import SortArticles from './SortArticles';
 import Error from './Error';
+import styles from './ArticleList.module.css';
 
 class ArticleList extends React.Component {
   state = {
@@ -33,16 +34,18 @@ class ArticleList extends React.Component {
     if (err) return <Error {...err} />;
     if (isLoading) return <Loading />;
     return (
-      <main className="Main">
+      <main className={styles.ArtList}>
         {this.props.topic ? (
           <>
-            <h2>{this.props.topic}</h2>
-            <h3>{this.props.location.state.description}</h3>
+            <h2 className={styles.ArtTitle}>{this.props.topic}</h2>
+            <h3 className={styles.ArtDescription}>
+              {this.props.location.state.description}
+            </h3>
           </>
         ) : this.props.author ? (
-          <h2>{this.props.author}'s articles</h2>
+          <h2 className={styles.ArtTitle}>{this.props.author}'s articles</h2>
         ) : (
-          <h2>all articles</h2>
+          <h2 className={styles.ArtTitle}>all articles</h2>
         )}
         <SortArticles handleSort={this.handleSort} />
         {articles.map((article) => {

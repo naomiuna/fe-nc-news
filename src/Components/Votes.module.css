@@ -1,0 +1,10 @@
+.votes {
+  align-items: center;
+  vertical-align: middle;
+}
+
+.p {
+  margin: 0px 0px 3px 0px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.75);
+}

@@ -1,8 +1,65 @@
+:root {
+  --pink: #ed217c;
+  --green: #1b998b;
+  --grey: #96979c;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+button {
+  background: #fdfdff;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+}
+
+::selection {
+  background-color: #eb4888;
+  color: #000;
+}
+
+button {
+  width: 120px;
+  height: 30px;
+  border: 2px solid var(--grey);
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: var(--grey);
+  font-size: 1rem;
+  overflow: auto;
+  transition: 0.4s ease all;
+}
+button:hover {
+  background: rgba(150, 151, 156, 0.1);
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 {
+  color: var(--pink);
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
 .App {
   display: grid;
   grid-template-rows: 100px 50px auto 50px;
   grid-template-columns: auto 200px;
   grid-template-areas: 'header logIn' 'nav nav' 'main main' 'footer footer';
+  text-align: center;
 }
 
 .logIn {

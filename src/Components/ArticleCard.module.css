@@ -1,0 +1,59 @@
+.articleCard {
+  display: grid;
+  grid-template-columns: 0.5fr 5.5fr;
+  grid-template-areas: 'vote main';
+  padding: 20px 15px;
+  margin-bottom: 30px;
+  width: 70%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid var(--green);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+}
+
+h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.aTitle {
+  color: var(--pink);
+}
+.aTitle:visited {
+  font-weight: 400;
+}
+
+.aInfo {
+  color: var(--green);
+}
+.aInfo:visited {
+  font-weight: 400;
+}
+
+.vote {
+  grid-area: vote;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.body {
+  margin: 10px 0px 0px 0px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.info {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .body {
+    margin-top: 5px;
+  }
+}

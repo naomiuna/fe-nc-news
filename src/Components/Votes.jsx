@@ -1,6 +1,7 @@
 import React from 'react';
 import Emoji from './Emoji';
 import * as api from '../Utils/api';
+import styles from './Votes.module.css';
 
 class Votes extends React.Component {
   state = {
@@ -10,14 +11,14 @@ class Votes extends React.Component {
     const { votes } = this.props;
     const { optimisticVotes } = this.state;
     return (
-      <section>
+      <section className={styles.votes}>
         <button
           onClick={() => this.handleClick(1)}
           disabled={optimisticVotes > 0}
         >
           <Emoji symbol="👍" label="thumbs up" />
         </button>
-        <p>{votes + optimisticVotes}</p>
+        <p className={styles.p}>{votes + optimisticVotes}</p>
         <button
           onClick={() => this.handleClick(-1)}
           disabled={optimisticVotes < 0}

@@ -35,14 +35,27 @@ class NavBar extends React.Component {
             >
               {slug}
               {slug === 'coding' && (
-                <Emoji
-                  symbol="🧑🏻‍💻"
-                  label="person on laptop"
-                  desciption={description}
-                />
+                <>
+                  {' '}
+                  <Emoji
+                    symbol="🧑🏻‍💻"
+                    label="person on laptop"
+                    desciption={description}
+                  />
+                </>
               )}
-              {slug === 'football' && <Emoji symbol="⚽️" label="football" />}
-              {slug === 'cooking' && <Emoji symbol="🧑🏾‍🍳" label="chef" />}
+              {slug === 'football' && (
+                <>
+                  {' '}
+                  <Emoji symbol="⚽️" label="football" />
+                </>
+              )}
+              {slug === 'cooking' && (
+                <>
+                  {' '}
+                  <Emoji symbol="🧑🏾‍🍳" label="chef" />
+                </>
+              )}
               <br />
             </Link>
           );

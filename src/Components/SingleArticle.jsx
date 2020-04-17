@@ -5,11 +5,13 @@ import { formatDates } from '../Utils/utils';
 import { Link } from '@reach/router';
 import CommentList from './CommentList';
 import Votes from './Votes';
+import Error from './Error';
 
 class SingleArticle extends React.Component {
   state = {
     article: {},
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   componentDidMount() {
@@ -19,8 +21,10 @@ class SingleArticle extends React.Component {
   render() {
     const {
       isLoading,
-      article: { title, author, created_at, body, topic, article_id, votes }
+      article: { title, author, created_at, body, topic, article_id, votes },
+      err
     } = this.state;
+    if (err) return <Error {...err} />;
     if (isLoading) return <Loading />;
     const { loggedInUser } = this.props;
     return (
@@ -41,10 +45,16 @@ class SingleArticle extends React.Component {
   }
 
   getArticleById = () => {
-    api.fetchArticleById(this.props.article_id).then((article) => {
-      const formattedArticle = formatDates(article);
-      this.setState({ article: formattedArticle, isLoading: false });
-    });
+    api
+      .fetchArticleById(this.props.article_id)
+      .then((article) => {
+        const formattedArticle = formatDates(article);
+        this.setState({ article: formattedArticle, isLoading: false });
+      })
+      .catch((err) => {
+        const { status, data } = err.response;
+        this.setState({ err: { status, msg: data.msg }, isLoading: false });
+      });
   };
 }
 
