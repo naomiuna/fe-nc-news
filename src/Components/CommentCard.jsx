@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 import Votes from './Votes';
 import DeleteComment from './DeleteComment';
+import styles from './CommentCard.module.css';
 
 const CommentCard = ({
   comment_id,
@@ -13,14 +14,20 @@ const CommentCard = ({
   loggedInUser
 }) => {
   return (
-    <article>
-      <p>
-        posted by <Link to={`/${author}`}>{author}</Link> {created_at}
-      </p>
-      <p>{body}</p>
-      {loggedInUser === author && (
-        <DeleteComment id={comment_id} handleDelete={handleDelete} />
-      )}
+    <article className={styles.commentCard}>
+      <section className={styles.body}>
+        <p>
+          posted by{' '}
+          <Link className={styles.aInfo} to={`/${author}/articles`}>
+            {author}
+          </Link>{' '}
+          {created_at}
+        </p>
+        <p>{body}</p>
+        {loggedInUser === author && (
+          <DeleteComment id={comment_id} handleDelete={handleDelete} />
+        )}
+      </section>
       <Votes votes={votes} id={comment_id} type={'comments'} />
     </article>
   );

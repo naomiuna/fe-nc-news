@@ -1,7 +1,7 @@
 import React from 'react';
 import * as api from '../Utils/api';
 import Loading from './Loading';
-import { formatDates } from '../Utils/utils';
+import formatDates from '../Utils/utils';
 import { Link } from '@reach/router';
 import CommentList from './CommentList';
 import Votes from './Votes';

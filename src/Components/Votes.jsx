@@ -13,6 +13,7 @@ class Votes extends React.Component {
     return (
       <section className={styles.votes}>
         <button
+          className={styles.voteButton}
           onClick={() => this.handleClick(1)}
           disabled={optimisticVotes > 0}
         >
@@ -20,6 +21,7 @@ class Votes extends React.Component {
         </button>
         <p className={styles.p}>{votes + optimisticVotes}</p>
         <button
+          className={styles.voteButton}
           onClick={() => this.handleClick(-1)}
           disabled={optimisticVotes < 0}
         >

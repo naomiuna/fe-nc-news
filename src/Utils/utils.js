@@ -1,4 +1,4 @@
-exports.formatDates = (articles) => {
+const formatDates = (articles) => {
   if (Array.isArray(articles)) {
     return articles.map((article) => {
       const date = new Date(article.created_at);
@@ -8,3 +8,5 @@ exports.formatDates = (articles) => {
   const singleDate = new Date(articles.created_at);
   return { ...articles, created_at: singleDate.toDateString() };
 };
+
+export default formatDates;

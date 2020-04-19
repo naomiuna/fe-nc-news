@@ -2,7 +2,7 @@ import React from 'react';
 import * as api from '../Utils/api';
 import Loading from './Loading';
 import ArticleCard from './ArticleCard';
-import { formatDates } from '../Utils/utils';
+import formatDates from '../Utils/utils';
 import SortArticles from './SortArticles';
 import Error from './Error';
 import styles from './ArticleList.module.css';

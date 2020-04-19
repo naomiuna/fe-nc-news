@@ -1,10 +1,11 @@
 import React from 'react';
 import * as api from '../Utils/api';
 import Loading from './Loading';
-import { formatDates } from '../Utils/utils';
+import formatDates from '../Utils/utils';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
 import Error from './Error';
+import styles from './CommentList.module.css';
 
 class CommentList extends React.Component {
   state = {
@@ -21,7 +22,7 @@ class CommentList extends React.Component {
     if (err) return <Error {...err} />;
     if (isLoading) return <Loading />;
     return (
-      <section>
+      <section className={styles.commentList}>
         <h3>Comments ({comments.length})</h3>
         {!loggedInUser ? (
           <section>

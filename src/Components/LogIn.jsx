@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './LogIn.module.css';
 
 class LogIn extends React.Component {
   state = {
@@ -8,18 +9,27 @@ class LogIn extends React.Component {
     const { loggedInUser, avatar_url, handleSignOut } = this.props;
     const { username } = this.state;
     return (
-      <section>
+      <section className={styles.logIn}>
         {loggedInUser ? (
           <>
             <p>{loggedInUser}</p>
-            <img src={avatar_url} className="avatar" alt="profile avatar"></img>
-            <button onClick={() => handleSignOut()}>sign out</button>
+            <img
+              src={avatar_url}
+              className={styles.avatar}
+              alt="profile avatar"
+            ></img>
+            <button
+              className={styles.signOutButton}
+              onClick={() => handleSignOut()}
+            >
+              sign out
+            </button>
           </>
         ) : (
           <form onSubmit={this.handleSubmit}>
             <p>Sign in</p>
             <label>
-              Username :{' '}
+              Username:{' '}
               <select onChange={this.handleChange} value={username} type="text">
                 <option value="">select a user</option>
                 <option value="weegembump">weegembump</option>
@@ -30,7 +40,7 @@ class LogIn extends React.Component {
                 <option value="cooljmessy">cooljmessy</option>
               </select>
             </label>
-            <button>sign in</button>
+            <button className={styles.signInButton}>sign in</button>
           </form>
         )}
       </section>

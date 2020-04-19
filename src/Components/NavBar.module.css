@@ -1,0 +1,16 @@
+.navLink {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.navLink:visited {
+  font-weight: 400;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}

@@ -4,6 +4,7 @@ import { Link } from '@reach/router';
 import * as api from '../Utils/api';
 import Emoji from './Emoji';
 import Error from './Error';
+import styles from './NavBar.module.css';
 
 class NavBar extends React.Component {
   state = {
@@ -21,15 +22,19 @@ class NavBar extends React.Component {
     if (err) return <Error {...err} />;
     if (isLoading) return <Loading />;
     return (
-      <nav className="Nav">
-        <Link className="nav-link" to="/">
-          Home
+      <nav className={styles.nav}>
+        <Link className={styles.navLink} to="/">
+          Home{' '}
+          <>
+            {' '}
+            <Emoji symbol="🏠" label="house building" />
+          </>
         </Link>
         {topics.map(({ slug, description }) => {
           return (
             <Link
               to={`/topics/${slug}`}
-              className="nav-link"
+              className={styles.navLink}
               key={slug}
               state={{ description }}
             >

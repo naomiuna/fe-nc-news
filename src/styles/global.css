@@ -1,7 +1,8 @@
 :root {
   --pink: #ed217c;
   --green: #1b998b;
-  --grey: #96979c;
+  --grey: #8b94a3;
+  --black: #393d3f;
 }
 
 html,
@@ -68,7 +69,6 @@ a:hover {
 }
 .Header {
   grid-area: header;
-  border: solid 2px coral;
 }
 
 .Footer {
@@ -76,23 +76,6 @@ a:hover {
   border: solid 2px cornflowerblue;
 }
 
-.Nav {
-  grid-area: nav;
-  border: solid 2px hotpink;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: center;
-}
-
-.nav-link {
-  align-content: center;
-}
-
 .Main {
   grid-area: main;
-}
-
-.avatar {
-  height: 50px;
 }

@@ -1,3 +1,8 @@
 .sorter {
   margin-bottom: 20px;
 }
+.button:hover {
+  background: var(--pink);
+  color: var(--black);
+  cursor: pointer;
+}
