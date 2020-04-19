@@ -7,7 +7,7 @@ Sort by newest, top rated and hottest.<br />
 View individual articles with more detail and comments. <br />
 When logged in, user can post a comment of delete their own comments.
 
-Hosted project here on Netlify<br/>
+Hosted project [here](https://nt-nc-news.netlify.app/) on Netlify<br/>
 Hosted API available [here](https://nt-nc-news.herokuapp.com/api) and backend repo [here](https://github.com/naomiuna/nc-news).
 
 ## Getting Started & Installation
