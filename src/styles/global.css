@@ -10,6 +10,7 @@
 html,
 body {
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -59,7 +60,7 @@ a:hover {
 
 .App {
   display: grid;
-  grid-template-rows: 100px 50px auto 50px;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-columns: auto 200px;
   grid-template-areas: 'header logIn' 'nav nav' 'main main' 'footer footer';
   text-align: center;
@@ -67,7 +68,6 @@ a:hover {
 
 .logIn {
   grid-area: logIn;
-  border: solid 2px rgb(80, 255, 203);
 }
 .Header {
   grid-area: header;
@@ -75,7 +75,6 @@ a:hover {
 
 .Footer {
   grid-area: footer;
-  border: solid 2px cornflowerblue;
 }
 
 .Main {

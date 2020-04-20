@@ -15,14 +15,14 @@ class CommentAdder extends React.Component {
         <label>
           <p>Comment as {loggedInUser}:</p>
           <br />
-          <input
+          <textarea
             required
             value={body}
             onChange={this.handleInput}
             type="textarea"
             placeholder="be nice!"
             className={styles.input}
-          ></input>
+          ></textarea>
         </label>
         <button className={styles.button}>comment</button>
       </form>
