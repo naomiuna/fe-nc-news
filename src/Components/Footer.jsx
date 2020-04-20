@@ -6,6 +6,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <a
         href="http://github.com/naomiuna"
+        aria-label="github profile"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -13,6 +14,7 @@ const Footer = () => {
       </a>
       <a
         href="https://www.linkedin.com/in/naomi-todd"
+        aria-label="linkedin profile"
         rel="noopener noreferrer"
         target="_blank"
       >

@@ -9,7 +9,7 @@ class LogIn extends React.Component {
     const { err, loggedInUser, avatar_url, handleSignOut } = this.props;
     const { username } = this.state;
     return (
-      <section className={styles.logIn}>
+      <section role="complementary" className={styles.logIn}>
         {loggedInUser ? (
           <>
             <p>{loggedInUser}</p>
