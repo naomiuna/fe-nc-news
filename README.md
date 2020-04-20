@@ -49,6 +49,14 @@ The page will reload if you make edits.<br />
 - [Reach Router](https://reach.tech/router) - Router for React<br /><br />
   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
+## Future Features
+
+- pagination
+- authentication to allow improved sign-in and ability to register new user
+- ability to post and delete articles
+- ability to view most active/popular users
+- context API for logged in user
+
 ## Acknowledgments
 
 - Northcoders team 🧑🏻‍💻
