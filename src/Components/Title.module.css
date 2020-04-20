@@ -9,3 +9,10 @@ a {
   text-decoration: none;
   color: var(--black);
 }
+
+@media screen and (max-width: 600px) {
+  .title {
+    align-items: center;
+    justify-content: center;
+  }
+}
