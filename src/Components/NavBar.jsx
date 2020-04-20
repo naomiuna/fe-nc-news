@@ -20,7 +20,7 @@ class NavBar extends React.Component {
   render() {
     const { isLoading, topics, err } = this.state;
     if (err) return <Error {...err} />;
-    if (isLoading) return <Loading />;
+    if (isLoading) return <Loading height={20} width={20} />;
     return (
       <nav className={styles.nav}>
         <Link className={styles.navLink} to="/">

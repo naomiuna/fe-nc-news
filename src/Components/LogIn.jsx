@@ -6,7 +6,7 @@ class LogIn extends React.Component {
     username: ''
   };
   render() {
-    const { loggedInUser, avatar_url, handleSignOut } = this.props;
+    const { err, loggedInUser, avatar_url, handleSignOut } = this.props;
     const { username } = this.state;
     return (
       <section className={styles.logIn}>
@@ -27,6 +27,7 @@ class LogIn extends React.Component {
           </>
         ) : (
           <form onSubmit={this.handleSubmit}>
+            {err && <p className={styles.error}>username not registered</p>}
             <p>Sign in</p>
             <label>
               Username:{' '}

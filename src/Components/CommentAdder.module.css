@@ -1,0 +1,19 @@
+.form {
+  margin-bottom: 30px;
+}
+
+.input {
+  height: 40px;
+  width: 75%;
+  border: 2px solid var(--pink);
+}
+
+.button {
+  color: var(--pink);
+  border: 2px solid var(--pink);
+  margin-top: 5px;
+}
+.button:hover {
+  background-color: var(--halfPink);
+  color: var(--black);
+}

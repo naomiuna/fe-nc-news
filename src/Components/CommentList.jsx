@@ -25,7 +25,7 @@ class CommentList extends React.Component {
       <section className={styles.commentList}>
         <h3>Comments ({comments.length})</h3>
         {!loggedInUser ? (
-          <section>
+          <section className={styles.logInToComment}>
             <p>You must be logged in to comment</p>
           </section>
         ) : (

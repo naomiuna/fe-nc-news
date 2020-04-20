@@ -1,0 +1,46 @@
+.articleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.article {
+  display: grid;
+  grid-template-columns: 0.5fr 5.5fr;
+  grid-template-areas:
+    'vote main'
+    'comments comments';
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 70%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: var(--pink);
+}
+
+h3 {
+  text-align: center;
+  color: var(--green);
+  padding: 20px;
+}
+.body {
+  text-align: left;
+}
+
+.vote {
+  margin-top: 10px;
+  grid-area: vote;
+}
+
+.main {
+  grid-area: main;
+}
+
+@media screen and (max-width: 640px) {
+  .article {
+    width: 80%;
+  }
+}

@@ -6,6 +6,7 @@ import { Link } from '@reach/router';
 import CommentList from './CommentList';
 import Votes from './Votes';
 import Error from './Error';
+import styles from './SingleArticle.module.css';
 
 class SingleArticle extends React.Component {
   state = {
@@ -28,18 +29,25 @@ class SingleArticle extends React.Component {
     if (isLoading) return <Loading />;
     const { loggedInUser } = this.props;
     return (
-      <main>
-        <article>
-          <h3>{title}</h3>
-          <p>
-            <Link to={`/topics/${topic}`}>{topic}</Link>
-            posted by <Link to={`/${author}/articles`}>{author}</Link>{' '}
-            {created_at}
-          </p>
-          <p>{body}</p>
-          <Votes votes={votes} id={article_id} type={'articles'} />
-        </article>
-        <CommentList article_id={article_id} loggedInUser={loggedInUser} />
+      <main className={styles.articleSection}>
+        <main className={styles.article}>
+          <article className={styles.main}>
+            <h3>{title}</h3>
+            <p>
+              <Link to={`/topics/${topic}`}>{topic}</Link> posted by{' '}
+              <Link to={`/${author}/articles`}>{author}</Link> {created_at}
+            </p>
+            <br />
+            <p className={styles.body}>{body}</p>
+          </article>
+          <Votes
+            className={styles.vote}
+            votes={votes}
+            id={article_id}
+            type={'articles'}
+          />
+          <CommentList article_id={article_id} loggedInUser={loggedInUser} />
+        </main>
       </main>
     );
   }

@@ -23,6 +23,7 @@ const CommentCard = ({
           </Link>{' '}
           {created_at}
         </p>
+        <br />
         <p>{body}</p>
         {loggedInUser === author && (
           <DeleteComment id={comment_id} handleDelete={handleDelete} />

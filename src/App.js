@@ -13,17 +13,19 @@ import * as api from './Utils/api';
 class App extends React.Component {
   state = {
     loggedInUser: null,
-    avatar_url: null
+    avatar_url: null,
+    err: null
   };
 
   render() {
-    const { loggedInUser, avatar_url } = this.state;
+    const { loggedInUser, avatar_url, err } = this.state;
     return (
       <div className="App">
         <Title />
         <LogIn
           loggedInUser={loggedInUser}
           avatar_url={avatar_url}
+          err={err}
           handleLogIn={this.handleLogIn}
           handleSignOut={this.handleSignOut}
         />
@@ -44,10 +46,18 @@ class App extends React.Component {
   }
 
   handleLogIn = (username) => {
-    api.fetchUser(username).then((user) => {
-      const { username, avatar_url } = user;
-      this.setState({ loggedInUser: username, avatar_url });
-    });
+    api
+      .fetchUser(username)
+      .then((user) => {
+        const { username, avatar_url } = user;
+        this.setState({ loggedInUser: username, avatar_url, err: false });
+      })
+      .catch((err) => {
+        this.setState({
+          err: true,
+          isLoading: false
+        });
+      });
   };
   handleSignOut = () => {
     this.setState({ loggedInUser: null, avatar_url: null });

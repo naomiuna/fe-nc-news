@@ -3,4 +3,14 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  grid-area: comments;
+}
+
+.logInToComment {
+  text-align: center;
+  padding: 20px 18px;
+  border: 2px solid var(--green);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './CommentAdder.module.css';
 
 class CommentAdder extends React.Component {
   state = {
@@ -10,18 +11,20 @@ class CommentAdder extends React.Component {
     const { loggedInUser } = this.props;
     const { body } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles.form} onSubmit={this.handleSubmit}>
         <label>
           <p>Comment as {loggedInUser}:</p>
+          <br />
           <input
             required
             value={body}
             onChange={this.handleInput}
             type="textarea"
             placeholder="be nice!"
+            className={styles.input}
           ></input>
         </label>
-        <button>comment</button>
+        <button className={styles.button}>comment</button>
       </form>
     );
   }
